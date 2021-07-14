@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1>Account Registration</h1>
+<body>
+    <fieldset >
+        <legend>Type of User</legend>
+            <label>What type of user are you?</label>
+            <input type="radio" id="Customer" name="user" value="Customer">
+            <label for="Customer">Customer</label>
+            <input type="radio" id="Employee/Contractor" name="user" value="Employee/Contractor">
+            <label for="Employee/Contractor">Employee/Contractor</label>
+            <input type="radio" id="Federal Employee/Contractor" name="user" value="Federal Employee/Contractor">
+            <label for="Federal Employee/Contractor">Federal Employee/Contractor</label>
+    </fieldset>
+    <fieldset >
+        <legend>Email</legend>
+            <label for="personalEmail">Personal Email Address</label>
+            <input type="email" id="email" >
+            <label for="buisnessEmail">Buisness Email Address</label>
+            <input type="email" id="buisnessEmail">
+    </fieldset>
+    <fieldset >
+        <legend>Password</legend>
+            <label for="password">Password</label>
+            <input type="password" id="password">
+    </fieldset>
+    <fieldset >
+        <legend>Use Case</legend>
+            <label for="case">I'm interested in: </label>
+            <input type="text" id="case" list="useCase">
+            <datalist id="useCase">
+                <option value="Personal">Personal</option>
+                <option value="Buisness">Buisness</option>
+              </datalist>
+    </fieldset>
+    <fieldset >
+        <legend>Age Verification</legend>
+            <label for="age">i am over 18 years of age.</label>
+            <input type="checkbox" id="age">
+    </fieldset>
+</body>
+</html>

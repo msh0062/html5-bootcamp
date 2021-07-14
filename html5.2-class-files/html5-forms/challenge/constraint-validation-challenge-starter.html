@@ -20,23 +20,23 @@
 				<label for="unitsMetric">
 					cm/kg:
 				</label>
-				<input type="radio" id="unitsMetric" name="units" value="metric">
+				<input type="radio" id="unitsMetric" name="units" value="metric" required>
 				<label for="unitsEn">
 					in/lb:
 				</label>
-				<input type="radio" id="unitsEn" name="units" value="en">
+				<input type="radio" id="unitsEn" name="units" value="en" required>
 			</fieldset>
 			<fieldset>
 				<legend>Height/Weight</legend>
 				<label for="h">Height:</label>
-				<input type="text" id="h" name="h" size="6" class="blockElem">
+				<input type="number" id="h" name="h" size="6" class="blockElem" required>
 				<label for="w">Weight:</label>
-				<input type="text" id="w" name="w" size="6" class="blockElem">
+				<input type="number" id="w" name="w" size="6" class="blockElem" required>
 			</fieldset>
 			<fieldset>
                 <legend>Contact Info:</legend>
 				<label for="email" class="blockElem">Email: </label>
-				<input type="text" id="email" size="10">
+				<input type="email" id="email" size="10" required>
 			</fieldset>
 			<input type="submit" id="calcBMI_btn" name="calcBMI_btn" value="Calculate BMI">
 
