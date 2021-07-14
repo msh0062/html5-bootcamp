@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ins-del - starter</title>
+    <style>
+        .tooltip{ 
+            display: inline;
+            position: relative;
+        }
+
+        .tooltip:hover:after {
+            background: rgba(0,0,0, .75);
+            border-radius: 3px;
+            bottom: 20px;
+            color: #fff;
+            width: 290px;
+            left: 15%;
+            padding: 3px 15px;
+            position: absolute;
+            z-index: 100;
+            content: "Cited form " attr(cite);
+        }
+    </style>
+</head>
+<body>
+<h1>HTML 5 &lt;ins&gt; Element</h1>
+<p>Typically used by HTML authoring tools, content management systems, automated publishing systems, etc. designed to track when content is edited, inserted or deleted.</p>
+<pre>Sample Content:</pre>
+<h1>Quote from the CEO</h1>
+<p>In a recent speech, <ins class="tooltip" datetime="2019-01-15T9:45:12" cite="http://foodplate.com/stockholdersmetting.html">given on January 4, 2012</ins> <!-- Step 3: add ins with datetime and cite attributes here -->the CEO of FoodPlate Inc. announced a revenue increase for the previous year in the amount of 12%.</p>
+<p>Also announced was a 2012 dividend increase of <!-- Step 4: add del here --> <del>5%</del> 10%.</p>
+</body>
+</html>
