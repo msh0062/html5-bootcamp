@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Register Your Food Plate Diary - starter</title>
+<link href="localStorage.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="wrapper">
+  <header id="welcomeHeader"> <img id="foodPlateImg" src="images/MyFoodPlate_logo.png" /> </header>
+  <section id="mainContent">
+    <form id="registerFrm">
+      <label for="firstName" class="block">First Name:</label>
+      <input type="text" name="firstName" id="firstName" autofocus required>
+      <section>
+      <input type="radio" name="sex" id="sexF" value="F">
+      <label for="sexF">Female</label>
+
+      <input type="radio" name="sex" id="sexM" value="M">
+      <label for="sexM">Male</label>
+      </section>
+      <input type="radio" name="ageGroup" id="ageGroupC" value="C">
+      <label for="ageGroupC">Child</label>
+
+      <input type="radio" name="ageGroup" id="ageGroupA" value="A">
+      <label for="ageGroupA">Adult</label>
+
+      <div id="adultAgeGroups" style="display:none; top:8px;">
+        <select name="adultAgeGroup" id="adultAgeGroup" size="1">
+          <option value="" selected>Select your Age Group</option>
+          <option value="19-30">19-30</option>
+          <option value="31-50">31-50</option>
+          <option value="51+">51+</option>
+        </select>
+      </div>
+      <div id="childAgeGroups" style="display:none; top:8px">
+        <select name="childAgeGroup" id="childAgeGroup" size="1">
+          <option value="" selected>Select your Age Group</option>
+          <option value="2-30">2-3</option>
+          <option value="4-8">4-8</option>
+          <option value="9-13">9-13</option>
+          <option value="14-18">14-18</option>
+        </select>
+      </div>
+
+      <input type="submit" name="submit" id="submit" value="Submit" onclick="saveUser()">
+
+
+    </form>
+  </section>
+</div>
+<script>
+document.getElementById('ageGroupA').addEventListener('click', function() {
+        document.getElementById('adultAgeGroups').style.display = "block";
+        document.getElementById('childAgeGroups').style.display = "none";
+      });
+document.getElementById('ageGroupC').addEventListener('click', function() {
+              console.log('yo');
+              document.getElementById('childAgeGroups').style.display = "block";
+              document.getElementById('adultAgeGroups').style.display = "none";
+      });
+
+    function saveUser() {
+    if (window.localStorage) {
+    let firstname = document.getElementById('firstname').value;
+    let gender = document.querySelector('input[name="sex"]:checked').value;
+    if (document.querySelector('input[id="ageGroupA"]:checked')) {
+        const ageGroupDropDown = document.querySelector('#adultAgeGroup');
+        ageGroup = ageGroupDropDown.options[ageGroupDropDown.selectedIndex].value;
+      }
+      if (document.querySelector('input[id="ageGroupC"]:checked')) {
+        const ageGroupDropDown = document.querySelector('#childAgeGroup');
+        ageGroup = ageGroupDropDown.options[ageGroupDropDown.selectedIndex].value;
+      }
+    }
+    localStorage.setItem('user', JSON.stringify({"firstName" : firstName, "gender" : gender, "ageGroup" : ageGroup}))
+  }
+</script>
+</body>
+</html>
